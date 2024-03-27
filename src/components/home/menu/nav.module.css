@@ -1,0 +1,33 @@
+/* vars located in ./menu.module.css */
+.container {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: fit-content;
+  background-color: var(--navBg);
+  transition: left 0.45s ease-in-out;
+}
+
+.container ul {
+  list-style: none;
+  margin: 0;
+  padding: var(--navPadding);
+}
+
+.container li {
+  margin-bottom: var(--hamMrgn);
+}
+
+.container a {
+  text-decoration: none;
+  color: var(--navColor);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.container[data-open='true'] {
+  left: 0;
+}

@@ -1,0 +1,28 @@
+.container {
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px; */
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(127, 255, 212, 0.938);
+  padding: 0.5rem 0;
+}
+
+.container h2 {
+  font-weight: 600;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.container fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0.5rem 0;
+}

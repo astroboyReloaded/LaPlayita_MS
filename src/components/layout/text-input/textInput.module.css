@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: 0.91fr 1fr 1fr;
+  grid-template-areas: 'label input error';
+}
+
+.container label {
+  grid-area: label;
+  font-size: 1rem;
+  margin: auto 0.5rem auto auto;
+}
+
+.container input {
+  grid-area: input;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #ffffffc2;
+  font-size: 1rem;
+}
+
+.container input[aria-invalid='true'] {
+  outline: 1px solid red;
+}
+
+.container input[type="number"]::-webkit-inner-spin-button,
+.container input[type="number"]::-webkit-outer-spin-button,
+.container input[type="number"]::-webkit-inner-spin-button,
+.container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

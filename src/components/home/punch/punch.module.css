@@ -1,0 +1,14 @@
+.btn {
+  --width: 4.5rem;
+  --height: calc(var(--width) * 0.774193548);
+  position: absolute;
+  right: 0;
+  margin: 1.5rem 1.8rem;
+  width: var(--width);
+  height: var(--height);
+  border: none;
+  background-color: transparent;
+  background-image: url('../../../../images/Punch-removebg-preview.png');
+  background-size: cover;
+  background-position: center;
+}

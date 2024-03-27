@@ -1,0 +1,30 @@
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectContainer label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.selectContainer label:nth-child(1) {
+  background: rgba(127, 255, 212, 0.938);
+}
+
+.selectContainer label:nth-child(2) {
+  background: rgba(255, 248, 52, 0.938);
+}
+
+.selectContainer label:nth-child(3) {
+  background: rgba(255, 99, 71, 0.938);
+}
+
+.selectContainer input {
+  display: none;
+}

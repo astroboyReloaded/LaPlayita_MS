@@ -1,0 +1,17 @@
+.container {
+  grid-area: error;
+  margin-left: 0.5rem;
+}
+
+.container p {
+  font-size: 0.8rem;
+  width: fit-content;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.valid {
+  color: green;
+}

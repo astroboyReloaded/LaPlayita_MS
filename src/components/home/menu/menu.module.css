@@ -1,0 +1,7 @@
+.units {
+  --hamWidth: 2.1rem;
+  --hamMrgn: 1.5rem;
+  --navPadding: calc((var(--hamMrgn) * 2) + var(--hamWidth));
+  --navBg: turquoise;
+  --navColor: white;
+}
