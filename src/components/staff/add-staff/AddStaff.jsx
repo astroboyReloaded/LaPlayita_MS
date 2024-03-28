@@ -6,10 +6,10 @@ import aScss from './addStaff.module.css';
 import SelectInput from '../../layout/slect-input/SelectInput';
 import { role } from '../utils/validateAddStaff';
 import PersonalInfo from './PersonalInfo';
-import UserPassword from './UserPassword';
+import UserPIN from './UserPIN';
 import SubmitButton from '../../layout/submit-button/SubmitButton';
 import Authorization from '../../layout/authorization/Authorization';
-import hashPIN from '../utils/hashNSalt';
+import { hashPIN } from '../utils/auth';
 
 const AddStaff = () => {
   const methods = useForm({
@@ -20,8 +20,8 @@ const AddStaff = () => {
       phone: '',
       email: '',
       staffName: '',
-      password: '',
-      confirmPassword: '',
+      PIN: '',
+      confirmPIN: '',
     },
   });
   const [state, setState] = useState({
@@ -31,12 +31,12 @@ const AddStaff = () => {
   });
   const dispatch = useDispatch();
   const onSubmit = (data) => {
-    const hashedPIN = hashPIN(data.password);
+    const hashedPIN = hashPIN(data.PIN);
     setState({
       ...state,
       newMember: {
         ...data,
-        password: hashedPIN,
+        PIN: hashedPIN,
       },
       reqAuthorization: true,
     });
@@ -53,7 +53,7 @@ const AddStaff = () => {
         <form onSubmit={methods.handleSubmit(onSubmit)}>
           <SelectInput {...role} />
           <PersonalInfo />
-          <UserPassword />
+          <UserPIN />
           <Authorization
             reqAuthorization={state.reqAuthorization}
             setState={setState}

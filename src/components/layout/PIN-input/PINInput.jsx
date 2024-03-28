@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import textInput from '../text-input/textInput.module.css';
 import ValidationError from '../validation-error/ValidationError';
 
-const PasswordInput = ({
+const PINInput = ({
   id,
   inputName,
   label,
@@ -55,7 +55,7 @@ const PasswordInput = ({
         aria-invalid={wasVisited && invalid}
         autoComplete="off"
       />
-      {(wasVisited || value.length >= 5) && (
+      {(wasVisited || value?.length >= 5) && (
         <ValidationError
           errorMessage={errors[inputName]?.message}
           isValid={!invalid}
@@ -65,17 +65,16 @@ const PasswordInput = ({
   );
 };
 
-PasswordInput.propTypes = {
+PINInput.propTypes = {
   id: PropTypes.string.isRequired,
   inputName: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   maxLength: PropTypes.number,
   validation: PropTypes.object.isRequired,
 };
 
-PasswordInput.defaultProps = {
+PINInput.defaultProps = {
   maxLength: 30,
 };
 
-export default PasswordInput;
+export default PINInput;

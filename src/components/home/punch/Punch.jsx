@@ -1,7 +1,6 @@
 import punch from './punch.module.css';
 
 const Punch = () => {
-  console.log('Punch');
   return (
     <button
       type="button"

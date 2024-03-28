@@ -40,7 +40,8 @@ export const role = {
   label: 'Rol',
   validation: {
     required: true,
-    validate: (value) => role.selectOptions.includes(value) || 'EL rol es requerido.',
+    validate: (value) =>
+      role.selectOptions.includes(value) || 'EL rol es requerido.',
   },
   selectOptions: ['owner', 'manager', 'server', 'cook', 'assistant'],
 };
@@ -91,20 +92,22 @@ export const staffName = {
   },
 };
 
-export const staffPassword = {
+export const staffPIN = {
   id: 'sP',
-  inputName: 'password',
-  label: 'Crea tu contraseña de 5 dígitos',
+  inputName: 'PIN',
+  label: 'Crea tu PIN de 5 dígitos',
   type: 'number',
   maxLength: 5,
   validation: {
-    required: 'Debes crear una contraseña.',
+    required: 'Debes crear PIN.',
     validate: {
-      length: (value) => value.length === 5 || 'Debe tener 5 números.',
+      length: (value) => value.length === 5 || 'PIN debe tener 5 dígitos.',
       noRepeats: (value) => {
         const numbers = value.split('');
         const numbersSet = new Set(numbers);
-        return numbersSet.size === numbers.length || 'Nungún número se debe repetir.';
+        return (
+          numbersSet.size === numbers.length || 'Nungún número se debe repetir.'
+        );
       },
       noConsecutive: (value) => {
         const numbers = value.split('');
@@ -119,14 +122,14 @@ export const staffPassword = {
   },
 };
 
-export const confirmPassword = {
+export const confirmPIN = {
   id: 'cP',
-  inputName: 'confirmPassword',
-  label: 'Confirma tu Contraseña',
+  inputName: 'confirmPIN',
+  label: 'Confirma tu PIN',
   type: 'number',
   maxLength: 5,
   validation: {
-    required: 'Debes confirmar tu contraseña.',
-    validate: (value, { password }) => value === password || 'Las contraseñas no coinciden.',
+    required: 'Debes confirmar tu PIN.',
+    validate: (value, { PIN }) => value === PIN || 'Los PINs no coinciden.',
   },
 };

@@ -9,6 +9,7 @@
 }
 
 .main a {
+  height: fit-content;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 600;
