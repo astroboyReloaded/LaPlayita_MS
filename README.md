@@ -9,6 +9,10 @@ The app allows for the owner to create, edit and delete users and asign rolls to
 
 ## Requirements:
 
+### The Create-Owner UI:
+
+- **If no user has ever been created, the CreateOwner component is displayed on the screen as the only UI available. This UI presents a form prompting for the Owner information to create the first profile. Once the Owner has bben created, the following app is available:**
+
 ### The Home-Screen IU:
 
 - The app has a Wbsite home-page frome where the app can be downloaded for install as a PWA.
@@ -109,3 +113,4 @@ The app allows for the owner to create, edit and delete users and asign rolls to
 ## Future Features:
 
 - Select multiple roles.
+- Register any PIN inputed.
