@@ -1,3 +1,15 @@
+export const role = {
+  id: 'rl',
+  inputName: 'role',
+  label: 'Rol',
+  validation: {
+    required: true,
+    validate: (value) =>
+      role.selectOptions.includes(value) || 'EL rol es requerido.',
+  },
+  selectOptions: ['owner', 'manager', 'server', 'cook', 'assistant'],
+};
+
 export const firstName = {
   id: 'fN',
   inputName: 'first',
@@ -32,18 +44,6 @@ export const lastName = {
       message: 'La primera con mayúscula.',
     },
   },
-};
-
-export const role = {
-  id: 'rl',
-  inputName: 'role',
-  label: 'Rol',
-  validation: {
-    required: true,
-    validate: (value) =>
-      role.selectOptions.includes(value) || 'EL rol es requerido.',
-  },
-  selectOptions: ['owner', 'manager', 'server', 'cook', 'assistant'],
 };
 
 export const cellphone = {

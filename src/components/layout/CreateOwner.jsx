@@ -1,15 +1,41 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { addStaff } from '../../slices/staffSlice';
+import { FormProvider, useForm } from 'react-hook-form';
+import PersonalInfo from '../staff/add-staff/PersonalInfo';
+import UserPIN from '../staff/add-staff/UserPIN';
+import SubmitButton from './submit-button/SubmitButton';
 
 const CreateOwner = () => {
-  const { staff } = useSelector((state) => state.staff);
-  useEffect(() => {
-    console.log(staff);
-  }, [staff]);
+  const methods = useForm({
+    defaultValues: {
+      first: '',
+      last: '',
+      phone: '',
+      email: '',
+      staffName: '',
+      PIN: '',
+      confirmPIN: '',
+    },
+  });
+  const dispatch = useDispatch();
+
+  const handleCreateOwner = (data) => {
+    dispatch(addStaff({
+      role: 'owner',
+      ...data,
+    }));
+  };
 
   return (
     <div>
-      <h1>Create Owner</h1>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(handleCreateOwner)}>
+          <h1>Crear Dueño</h1>
+          <PersonalInfo />
+          <UserPIN />
+          <SubmitButton value="Crear Dueño" />
+        </form>
+      </FormProvider>
     </div>
   );
 };
