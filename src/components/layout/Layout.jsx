@@ -11,8 +11,8 @@ const Layout = () => {
 
   useEffect(() => {
     dispatch(fetchStaff());
-  }, [staff]);
-
+  }, []);
+  console.log(staff);
 
   if (staff.loading) {
     return (

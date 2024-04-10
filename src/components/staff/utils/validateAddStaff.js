@@ -15,8 +15,8 @@ export const firstName = {
   inputName: 'first',
   label: 'Nombre(s)',
   type: 'text',
+  required: 'Campo necesario.',
   validation: {
-    required: 'Campo necesario.',
     minLength: {
       value: 2,
       message: 'Este nombre está muy corto!',

@@ -1,4 +1,3 @@
-import React from 'react';
 import TextInput from '../../layout/text-input/TextInput';
 import {
   firstName,

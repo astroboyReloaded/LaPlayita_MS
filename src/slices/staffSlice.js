@@ -32,7 +32,7 @@ const staffSlice = createSlice({
         phone: payload.phone,
         email: payload.email,
         staffName: payload.staffName,
-        password: payload.password,
+        PIN: payload.PIN,
       };
       state.staff.push(newStaff);
       try {

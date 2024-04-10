@@ -16,11 +16,13 @@ const TextInput = ({
     register,
     trigger,
     getFieldState,
+    setError,
     formState: { errors },
   } = useFormContext();
   const { ref } = register(inputName);
   const { invalid } = getFieldState(inputName);
   const [wasVisited, setWasVisited] = useState(false);
+  console.log(invalid, errors);
 
   return (
     <div className={textInput.container}>
@@ -33,7 +35,10 @@ const TextInput = ({
         name={inputName}
         type={type}
         ref={ref}
-        onBlur={() => { setWasVisited(true); }}
+        onBlur={() => { setWasVisited(true), setError(inputName, {
+          type: 'manual',
+          message: 'Campo necesario.',
+        }) }}
         onSubmit={() => { setWasVisited(true); }}
         onKeyUp={async () => {
           await trigger(inputName);

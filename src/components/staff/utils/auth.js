@@ -2,7 +2,6 @@ const shift = [3, 6, 9, 6, 3];
 
 export function hashPIN(pin) {
   const salt = (Math.random() * 100000).toFixed(0).split('');
-  console.log(salt, shift, pin);
   let hashedPIN = '';
   pin.split('').map((char, i) => {
     const shifted = parseInt(char) + shift[i];
