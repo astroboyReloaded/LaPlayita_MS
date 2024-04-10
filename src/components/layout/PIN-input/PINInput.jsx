@@ -16,6 +16,7 @@ const PINInput = ({
     watch,
     getFieldState,
     trigger,
+    setError,
     formState: { errors },
   } = useFormContext();
   const { ref } = register(inputName);
@@ -49,7 +50,11 @@ const PINInput = ({
         onKeyUp={() => {
           trigger(inputName);
         }}
-        onBlur={() => { setWasVisited(true); }}
+        onBlur={() => { setWasVisited(true), setError(inputName, {
+          type: 'manual',
+          message: 'Campo necesario.',
+          })
+        }}
         onSubmit={() => { setWasVisited(true); }}
         maxLength={maxLength}
         aria-invalid={wasVisited && invalid}
