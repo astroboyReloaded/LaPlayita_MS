@@ -1,0 +1,3 @@
+- The 'Shopping List' component's user-cicle beguins with an empty list.
+- If device is not connected to the Internet, it will display a 'lista local' message to let the user know.
+- If the device is connected to the Internet, the component will try to fetch the last 'created_at' value from the remote database. If there is a more recently created or updated item, the database will offer the choice to merge the remote Shopping List with the local Shopping List, replace the local Shoppinl List with the remote Shopping List, or replace the remote Shopping List with the local Shopping List. When merging, if items (id's) repeat, the most recent version will prevail.

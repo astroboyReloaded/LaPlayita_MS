@@ -1,0 +1,36 @@
+.mainContainer{
+  padding: 1rem;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  background-color: rgba(245, 245, 245, 0.692);
+  border-radius: 0.5rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bought {
+  text-decoration: line-through;
+  color: gray;
+}
+.itemName {
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+.buttonsContainer {
+  margin-left: 1rem;
+}
