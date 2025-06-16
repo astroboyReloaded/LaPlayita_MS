@@ -7,7 +7,24 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3003;
-app.use(cors());
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'https://your-site-name.netlify.app',
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('CORS policy: This origin is not allowed'));
+      }
+    },
+  }),
+);
 app.use(express.json());
 
 app.use('/shopping-list', shoppingListRouter);

@@ -2,7 +2,9 @@
 
 export const getRemoteShoppingList = async () => {
   try {
-    const res = await fetch('http://localhost:3003/shopping-list/');
+    const res = await fetch(
+      'https://laplayita-ms-server.onrender.com/shopping-list/',
+    );
     const data = await res.json();
     console.log(data);
     return data; // Assuming the response is an array of shopping list items
@@ -21,13 +23,16 @@ export const getRemoteShoppingList = async () => {
 
 export const addItemToRemoteShoppingList = async (item_name) => {
   console.log('Adding item to remote shopping list:', item_name);
-  const response = await fetch('http://localhost:3003/shopping-list/add-item', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  const response = await fetch(
+    'https://laplayita-ms-server.onrender.com/shopping-list/add-item',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ item_name }),
     },
-    body: JSON.stringify({ item_name }),
-  }).catch((error) => {
+  ).catch((error) => {
     throw new Error(error.message);
   });
   return response.json(); // Assuming the response is the newly added item
@@ -44,7 +49,7 @@ export const addItemToRemoteShoppingList = async (item_name) => {
 export const editRemoteShoppingListItem = async (id, updated_name) => {
   console.log('Editing item in remote shopping list:', id, updated_name);
   const response = await fetch(
-    'http://localhost:3003/shopping-list/edit-item',
+    'https://laplayita-ms-server.onrender.com/shopping-list/edit-item',
     {
       method: 'PUT',
       headers: {
@@ -67,7 +72,7 @@ export const editRemoteShoppingListItem = async (id, updated_name) => {
 
 export const toggleBoughtRemoteShoppingListItem = async (id, bought) => {
   const response = await fetch(
-    'http://localhost:3003/shopping-list/toggle-bought',
+    'https://laplayita-ms-server.onrender.com/shopping-list/toggle-bought',
     {
       method: 'PUT',
       headers: {
@@ -91,7 +96,7 @@ export const toggleBoughtRemoteShoppingListItem = async (id, bought) => {
 
 export const removeItemFromRemoteShoppingList = async (id) => {
   const response = await fetch(
-    'http://localhost:3003/shopping-list/remove-item',
+    'https://laplayita-ms-server.onrender.com/shopping-list/remove-item',
     {
       method: 'DELETE',
       headers: {
@@ -112,7 +117,7 @@ export const removeItemFromRemoteShoppingList = async (id) => {
 
 export const clearBoughtItemsRemoteShoppingList = async () => {
   const response = await fetch(
-    'http://localhost:3003/shopping-list/clear-bought',
+    'https://laplayita-ms-server.onrender.com/shopping-list/clear-bought',
     {
       method: 'DELETE',
       headers: {
@@ -128,7 +133,7 @@ export const clearBoughtItemsRemoteShoppingList = async () => {
 
 export const clearRemoteShoppingList = async () => {
   const response = await fetch(
-    'http://localhost:3003/shopping-list/clear-all',
+    'https://laplayita-ms-server.onrender.com/shopping-list/clear-all',
     {
       method: 'DELETE',
       headers: {

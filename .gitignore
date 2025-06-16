@@ -7,18 +7,55 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+dist-ssr/
+out/
+.next/
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Env files
+.env
+.env.*       # e.g., .env.development, .env.production
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Editor config
+.vscode/
+!.vscode/extensions.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Optional: skip coverage output
+coverage/
+
+# Optional: skip lock files (only if team/project decides to)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Optional: skip test snapshots
+__snapshots__/
+
+# Optional: skip Firebase / Netlify / Vercel deploy files
+.firebase/
+.netlify/
+.vercel/
+
+# Optional: skip custom dev server output
+*.log.*
+*.pid
+
+# Optional: VS Code user-specific settings
+.vscode/settings.json
+.vscode/launch.json
