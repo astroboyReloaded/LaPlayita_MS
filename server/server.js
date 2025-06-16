@@ -9,9 +9,9 @@ const app = express();
 const port = process.env.PORT || 3003;
 
 const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  'https://your-site-name.netlify.app',
+  // 'http://localhost:5173',
+  // 'http://localhost:3000',
+  'https://la-playita-ms.netlify.app',
 ];
 
 app.use(
@@ -30,5 +30,5 @@ app.use(express.json());
 app.use('/shopping-list', shoppingListRouter);
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on port:${port}`);
 });
