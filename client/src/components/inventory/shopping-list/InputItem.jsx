@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FaPlusCircle } from 'react-icons/fa';
+import { FaPlus } from 'react-icons/fa';
 
-const InputItem = ({ addItem }) => {
+const InputItem = ({ addItem, styles }) => {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
 
@@ -23,16 +23,16 @@ const InputItem = ({ addItem }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="form-container">
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
         <input
           type="text"
           placeholder="Agregar artículo..."
           value={title}
           onChange={handleChange}
-          className="input-text"
+          className={styles.inputItem}
         />
-        <button type="submit" className="input-submit">
-          <FaPlusCircle />
+        <button type="submit" className={styles.addButton}>
+          <FaPlus className={styles.addIcon} />
         </button>
       </form>
       <span className="submit-warning">{message}</span>
@@ -44,4 +44,5 @@ export default InputItem;
 
 InputItem.propTypes = {
   addItem: PropTypes.func.isRequired,
+  styles: PropTypes.object.isRequired,
 };

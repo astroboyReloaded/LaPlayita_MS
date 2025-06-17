@@ -3,9 +3,9 @@ import /*React, */{ useEffect, useState } from 'react';
 import InputItem from './InputItem';
 import ShoppingList from './ShoppingList';
 // import { Loading } from '../../layout/loading/Loading';
-import { Link } from 'react-router-dom';
 import { getRemoteShoppingList, addItemToRemoteShoppingList, editRemoteShoppingListItem, toggleBoughtRemoteShoppingListItem, removeItemFromRemoteShoppingList, clearBoughtItemsRemoteShoppingList, /*clearRemoteShoppingList*/ } from './hooks/utils/shoppingListDBUtils.js';
-import shoppingListCSS from './shoppingList.module.css';
+import styles from './shoppingList.module.css';
+import { CloseWindow } from '../../layout/close-window/CloseWindow.jsx';
 
 // const LocalListMessage = React.memo(({ showingLocalShoppingListMsg }) => {
 //   return <small>{showingLocalShoppingListMsg}</small>;
@@ -138,12 +138,12 @@ const LogicShoppingList = () => {
   // }
 
   return (
-    <div  className={shoppingListCSS.mainContainer}>
-      <Link to="/">X</Link>
+    <div  className={styles.mainContainer}>
+      <CloseWindow />
       <h1>Lista de Compras
         {/* <LocalListMessage showingLocalShoppingListMsg={showingLocalShoppingListMsg} /> */}
       </h1>
-      <InputItem addItem={addItem}  />
+      <InputItem addItem={addItem} styles={styles} />
       {noInternetConnectionMsg && (
         <p style={{ color: 'red' }}>{noInternetConnectionMsg}</p>
       )}
@@ -158,7 +158,7 @@ const LogicShoppingList = () => {
           toggleBought={toggleBought}
           delItem={delItem}
           editItem={editItem}
-          styles={shoppingListCSS}
+          styles={styles}
         />
       )}
       <button type="button" onClick={clearBoughtItems}>
