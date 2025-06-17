@@ -36,7 +36,6 @@
 
 .addIcon {
   display: flex;
-  font-size: 0.9rem;
   align-items: center;
   padding-block: 0.2rem;
 }
@@ -56,12 +55,17 @@
   text-decoration: line-through;
   color: gray;
 }
-.itemName {
-  flex-grow: 1;
-  margin-right: 1rem;
-}
 
 .buttonsContainer {
-  margin-left: 1rem;
+  margin-left: auto;
+}
+
+.itemBtn {
+  margin-inline: 0.2rem;
+}
+
+.erraseBoughtBtn {
   font-size: 0.9rem;
+  background-color: rgb(252, 252, 90);
+  border: 1px solid black;
 }

@@ -72,11 +72,11 @@ const Item = ({
           </span>
         </span>
         <span className={styles.buttonsContainer}>
-          <button type="button" onClick={handleEditing}>
-            <AiFillEdit className={'styles.toDoBtn'} />
+          <button type="button"className={styles.itemBtn} onClick={handleEditing}>
+            <AiFillEdit />
           </button>
-          <button type="button" onClick={handleDeletItem}>
-            <FaTrash className={'styles.toDoBtn'} />
+          <button type="button" className={styles.itemBtn} onClick={handleDeletItem}>
+            <FaTrash />
           </button>
         </span>
       </div>

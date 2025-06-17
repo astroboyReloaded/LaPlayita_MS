@@ -161,7 +161,7 @@ const LogicShoppingList = () => {
           styles={styles}
         />
       )}
-      <button type="button" onClick={clearBoughtItems}>
+      <button type="button" className={styles.erraseBoughtBtn} onClick={clearBoughtItems}>
         Borrar Comprados
       </button>
       {/* <button type="button" onClick={clearShoppingList}>
