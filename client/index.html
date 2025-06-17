@@ -17,6 +17,11 @@
     <title>La Playita Management System</title>
   </head>
   <body>
+    <script>
+      if (window.location.pathname === '/index.html') {
+        window.location.replace('/');
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
